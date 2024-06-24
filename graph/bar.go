@@ -80,7 +80,10 @@ func BarStack() *charts.Bar {
 	bar.SetXAxis(weeks).
 		AddSeries("価格", generateBarItems()).
 		AddSeries("税金", generateBarItems()).
-		AddSeries("軽減税金", generateBarItems())
+		AddSeries("軽減税金", generateBarItems()).
+		SetSeriesOptions(charts.WithBarChartOpts(opts.BarChart{
+			Stack: "stackA",
+		}))
 
 	return bar
 }
